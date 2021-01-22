@@ -1,5 +1,7 @@
 package com.fsts.dao;
 
-public interface Compte {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface Compte extends JpaRepository<com.fsts.entities.Compte, Long> {
 
 }
