@@ -15,7 +15,7 @@ import javax.persistence.Table;
 public class Facture implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int biller_Id;
+	private Long biller_Id;
 	private String biller_Name;
 	private float paid_amount;
 	private Date date;
@@ -26,16 +26,17 @@ public class Facture implements Serializable{
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Facture(String biller_Name, float paid_amount, Date date) {
+	public Facture(String biller_Name, float paid_amount, Date date, Compte compte) {
 		super();
 		this.biller_Name = biller_Name;
 		this.paid_amount = paid_amount;
 		this.date = date;
+		this.compte = compte;
 	}
-	public int getBiller_Id() {
+	public Long getBiller_Id() {
 		return biller_Id;
 	}
-	public void setBiller_Id(int biller_Id) {
+	public void setBiller_Id(Long biller_Id) {
 		this.biller_Id = biller_Id;
 	}
 	public String getBiller_Name() {
@@ -56,6 +57,11 @@ public class Facture implements Serializable{
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	
+	public Compte getCompte() {
+		return compte;
+	}
+	public void setCompte(Compte compte) {
+		this.compte = compte;
+	}
 	
 }

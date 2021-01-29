@@ -16,7 +16,7 @@ public class Service implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int request_Id;
+	private Long request_Id;
 	private String request_type;
 	private Date date;
 	@ManyToOne
@@ -26,15 +26,18 @@ public class Service implements Serializable {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Service(String request_type, Date date) {
+	
+	public Service(String request_type, Date date, Compte compte) {
 		super();
 		this.request_type = request_type;
 		this.date = date;
+		this.compte = compte;
 	}
-	public int getRequest_Id() {
+
+	public Long getRequest_Id() {
 		return request_Id;
 	}
-	public void setRequest_Id(int request_Id) {
+	public void setRequest_Id(Long request_Id) {
 		this.request_Id = request_Id;
 	}
 	public String getRequest_type() {
@@ -49,6 +52,13 @@ public class Service implements Serializable {
 	public void setDate(Date date) {
 		this.date = date;
 	}
+	public Compte getCompte() {
+		return compte;
+	}
+	public void setCompte(Compte compte) {
+		this.compte = compte;
+	}
+	
 
 	
 	

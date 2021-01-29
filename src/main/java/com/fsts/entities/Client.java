@@ -16,14 +16,14 @@ public class Client implements Serializable{
  
 	@Id
 	@GeneratedValue
-	private int user_Id;
+	private Long user_Id;
 	private String user_name;
 	private String password;
 	private String mobile_number;
 	private String address;
-	@OneToMany(mappedBy="client",fetch=FetchType.LAZY)
+	/*@OneToMany(mappedBy="client",fetch=FetchType.LAZY)
 	private Collection<Compte> comptes;
-	
+	*/
 	public Client() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -37,11 +37,11 @@ public class Client implements Serializable{
 		this.address = address;
 	}
 
-	public int getUser_Id() {
+	public Long getUser_Id() {
 		return user_Id;
 	}
 
-	public void setUser_Id(int user_Id) {
+	public void setUser_Id(Long user_Id) {
 		this.user_Id = user_Id;
 	}
 
@@ -76,6 +76,16 @@ public class Client implements Serializable{
 	public void setAddress(String address) {
 		this.address = address;
 	}
+
+	/*public Collection<Compte> getComptes() {
+		return comptes;
+	}
+
+	public void setComptes(Collection<Compte> comptes) {
+		this.comptes = comptes;
+	}
+*/
+	
 	
 	
 }
